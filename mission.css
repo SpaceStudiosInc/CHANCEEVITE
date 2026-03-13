@@ -6,14 +6,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&family=Black+Ops+One&display=swap');
 
 :root {
-  --img-hero:       url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/3a0ed96bef8073aeb274e0f9443dbaef9e89dc7a/Images/games.webp');
+  /* ── GitHub URLs: must use raw.githubusercontent.com, not /blob/ ── */
+  --img-hero:       url('https://raw.githubusercontent.com/SpaceStudiosInc/CHANCEEVITE/main/Images/games.webp');
   --img-cta:        url('https://images.unsplash.com/photo-1637594439872-44d1b1fe0a0b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  --img-games:      url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/b2ba386459ab24c2078dbe0935f19800c07bf47e/Images/games.webp');
+  --img-games:      url('https://raw.githubusercontent.com/SpaceStudiosInc/CHANCEEVITE/main/Images/games.webp');
   --img-lunch:      url('https://plus.unsplash.com/premium_photo-1723478515704-629ab1575612?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   --img-drive-out:  url('https://images.unsplash.com/photo-1758187529022-b447f032324d?q=80&w=1726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   --img-lasertag:   url('https://plus.unsplash.com/premium_photo-1682097234698-eb9040b2072d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   --img-dinner:     url('https://plus.unsplash.com/premium_photo-1764597488395-f534c13d1d90?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   --img-drive-home: url('https://images.unsplash.com/photo-1620059116993-398c21ce8406?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  --img-override:   url('https://raw.githubusercontent.com/SpaceStudiosInc/CHANCEEVITE/main/Images/image.jpg');
 
   --nv-black:    #020702;
   --nv-panel:    #060e06;
@@ -150,7 +152,6 @@ body.nv-revealed footer { opacity: 1; }
   animation: flicker 10s infinite;
 }
 
-/* Hero background — full color, no filter */
 .hero-photo-css {
   position: absolute; inset: 0;
   background-image: var(--img-hero);
@@ -274,11 +275,7 @@ h1.hero-title:hover { opacity: 0.8; }
 }
 
 /* ── CTA ── */
-.cta-wrap {
-  max-width: 480px;
-  margin: 2rem auto 0;
-  padding: 0 1.2rem;
-}
+.cta-wrap { max-width:480px; margin:2rem auto 0; padding:0 1.2rem; }
 .cta-eyebrow {
   font-family: var(--mono);
   font-size: 0.57rem;
@@ -298,7 +295,6 @@ h1.hero-title:hover { opacity: 0.8; }
 }
 .cta-link:hover { box-shadow: 0 0 35px #76ff03aa, 0 0 90px #76ff0333; }
 
-/* CTA image — full color, no filter */
 .cta-img-wrap {
   position: relative;
   height: 200px;
@@ -509,12 +505,7 @@ h1.hero-title:hover { opacity: 0.8; }
   animation: pulse-border 3s ease-in-out infinite;
 }
 
-/* Strip images — full color, no filter ever */
-.tl-strip {
-  width: 100%; height: 140px;
-  object-fit: cover;
-  display: block;
-}
+.tl-strip { width:100%; height:140px; object-fit:cover; display:block; }
 .tl-strip-css {
   width: 100%; height: 140px;
   background-size: cover;
@@ -586,10 +577,10 @@ h1.hero-title:hover { opacity: 0.8; }
   transition: opacity var(--reveal-speed) ease;
 }
 
-/* IMG OVERRIDE */
-body.img-override .tl-strip-css { background-image: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg') !important; }
-body.img-override .cta-img-wrap { background-image: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg') !important; }
-body.img-override .cta-img      { content: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg'); }
+/* ── IMG OVERRIDE: uses raw GitHub URL ── */
+body.img-override .tl-strip-css { background-image: var(--img-override) !important; }
+body.img-override .cta-img-wrap { background-image: var(--img-override) !important; }
+body.img-override .cta-img      { content: var(--img-override); }
 
 /* ── FOOTER ── */
 footer {
