@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MISSION: CHANCE'S BACHELOR BASH</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020702'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%2376ff03' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%2376ff03'/%3E%3Cline x1='16' y1='3' x2='16' y2='11' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='16' y1='21' x2='16' y2='29' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='3' y1='16' x2='11' y2='16' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='21' y1='16' x2='29' y2='16' stroke='%2376ff03' stroke-width='1.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="mission.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <header class="hero">
+    <div class="hero-photo-css" aria-hidden="true"></div>
+    <div class="hero-gradient" aria-hidden="true"></div>
+    <div class="hero-grid"    aria-hidden="true"></div>
+    <div class="hero-radial"  aria-hidden="true"></div>
+    <div class="scan-bar"     aria-hidden="true"></div>
+
+    <div class="hero-corner tl" aria-hidden="true"></div>
+    <div class="hero-corner tr" aria-hidden="true"></div>
+    <div class="hero-corner bl" aria-hidden="true"></div>
+    <div class="hero-corner br" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-status">
+        <span>NV-MODE: <span style="color:var(--nv-hot)">ON</span></span>
+        <span class="blink">REC</span>
+        <span>FAYETTEVILLE, AR</span>
+      </div>
+
+      <div class="hero-reticle" id="nv-toggle" title="Toggle night vision" aria-label="Toggle night vision"></div>
+      <p class="nv-toggle-label" id="nv-label">[ ENGAGE NV ]</p>
+
+      <h1 class="hero-title" id="img-toggle">CHANCE'S<br>BACHELOR<br>BASH</h1>
+      <p class="img-toggle-label" id="img-label">[ TAP TITLE: TOGGLE IMAGES ]</p>
+      <p class="hero-sub">All-Day Event &nbsp;&bull;&nbsp; Van Buren &rarr; Fayetteville, AR</p>
+      <div class="hero-date">FRIDAY &nbsp;&bull;&nbsp; 20 MAR 2026</div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════
+       RESERVATION CTA
+  ══════════════════════════════ -->
+  <section class="cta-wrap" aria-label="Reservation">
+    <p class="cta-eyebrow">&#9654; Click below to reserve your spot</p>
+
+    <a
+      href="https://modern.ourers.com/cart/?updated=1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cta-link"
+      aria-label="Reserve at Modern Mission Laser Tag"
+    >
+      <div class="cta-img-wrap">
+        <img
+          class="cta-img"
+          src="https://source.unsplash.com/FNl1t1rBhnU/900x400"
+          loading="lazy"
+        >
+        <div class="cta-img-overlay" aria-hidden="true"></div>
+        <div class="cta-img-grid"    aria-hidden="true"></div>
+      </div>
+
+      <div class="cta-body">
+        <div class="cta-text">
+          <p class="cta-label">Reserve your spot</p>
+          <p class="cta-name">MODERN MISSION<br>LASER TAG</p>
+          <p class="cta-addr">3484 E Joyce Blvd &bull; Fayetteville, AR 72703</p>
+          <p class="cta-cost">$27.00 per person</p>
+        </div>
+        <div class="cta-arrow">&gt;&gt;</div>
+      </div>
+
+      <div class="cta-btn">
+        RESERVE YOUR SPOT
+      </div>
+
+      <div class="cta-stripe" aria-hidden="true">
+        RESERVE NOW &nbsp;&bull;&nbsp; RESERVE NOW &nbsp;&bull;&nbsp; RESERVE NOW &nbsp;&bull;&nbsp; RESERVE NOW &nbsp;&bull;&nbsp;
+      </div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       LOCATION + MAPS
+  ══════════════════════════════ -->
+  <div class="base-wrap">
+    <div class="panel">
+      <span class="panel-tag">Start Location</span>
+      <div class="panel-body">
+        <strong>Chance's House &mdash; Van Buren, AR</strong>
+        <span class="dim">1414 Shadowalk Dr</span>
+      </div>
+      <a
+        href="https://maps.app.goo.gl/sWYU5wshiM7epcPN8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="maps-btn"
+        aria-label="Open in Google Maps"
+      >
+        &#9654; Open in Google Maps
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       TIMELINE
+  ══════════════════════════════ -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <span class="div-label">SCHEDULE</span>
+    <div class="div-line r"></div>
+  </div>
+
+  <main class="timeline" aria-label="Day Schedule">
+
+    <!-- 1000 -->
+    <div class="tl-item">
+      <div class="tl-time">1000</div>
+      <div class="tl-card">
+        <div class="tl-strip-css strip-games" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">1000</p>
+          <p class="tl-title">Meet at Chance's House</p>
+          <p class="tl-desc">Video games, snacks, hang out. Get there whenever &mdash; just be ready by noon.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1200 -->
+    <div class="tl-item">
+      <div class="tl-time">1200</div>
+      <div class="tl-card">
+        <div class="tl-strip-css strip-lunch" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">1200</p>
+          <p class="tl-title">Lunch</p>
+          <p class="tl-desc">Depends on what the group wants. Figure it out when we get there.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1600 -->
+    <div class="tl-item">
+      <div class="tl-time">1600</div>
+      <div class="tl-card">
+        <div class="tl-strip-css strip-drive-out" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">1600</p>
+          <p class="tl-title">Drive to Fayetteville</p>
+          <p class="tl-desc">Leave from Chance's house. Don't be late.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1730–1830 HIGHLIGHT -->
+    <div class="tl-item">
+      <div class="tl-time">1730&ndash;<br>1830</div>
+      <div class="tl-card highlight">
+        <div class="tl-strip-css strip-lasertag" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">1730 &ndash; 1830 &mdash; Main Event</p>
+          <p class="tl-title">Modern Mission Laser Tag</p>
+          <p class="tl-desc">3484 E Joyce Blvd, Fayetteville, AR. Make sure you reserved your spot &mdash; $27 per person.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1900 -->
+    <div class="tl-item">
+      <div class="tl-time">1900</div>
+      <div class="tl-card">
+        <div class="tl-strip-css strip-dinner" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">1900</p>
+          <p class="tl-title">Dinner</p>
+          <p class="tl-desc">Somewhere in Fayetteville. Location TBD by the group.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2100 -->
+    <div class="tl-item">
+      <div class="tl-time">2100</div>
+      <div class="tl-card">
+        <div class="tl-strip-css strip-drive-home" aria-hidden="true"></div>
+        <div class="tl-inner">
+          <p class="tl-phase">2100</p>
+          <p class="tl-title">Drive Home</p>
+          <p class="tl-desc">Head back to Van Buren. No hard end time.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer>
+    Modern Mission &nbsp;&bull;&nbsp; Fayetteville &nbsp;&bull;&nbsp; 20 MAR 2026
+  </footer>
+
+  <script>
+    // ── NV TOGGLE: pure alpha on/off — images always full color ──
+    const nvBtn   = document.getElementById('nv-toggle');
+    const nvLabel = document.getElementById('nv-label');
+    const body    = document.body;
+    let revealed  = false;
+
+    nvBtn.addEventListener('click', () => {
+      revealed = !revealed;
+      body.classList.toggle('nv-revealed', revealed);
+      nvLabel.textContent = revealed ? '[ ALPHA ON — CLICK TO BLACKOUT ]' : '[ ENGAGE NV ]';
+      nvLabel.style.color = revealed ? 'var(--nv-hot)' : '';
+    });
+  </script>
+</body>
+</html>
