@@ -587,9 +587,9 @@ h1.hero-title:hover { opacity: 0.8; }
 }
 
 /* IMG OVERRIDE */
-body.img-override .tl-strip-css { background-image: url('images/image.jpg') !important; }
-body.img-override .cta-img-wrap { background-image: url('images/image.jpg') !important; }
-body.img-override .cta-img      { content: url('images/image.jpg'); }
+body.img-override .tl-strip-css { background-image: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg') !important; }
+body.img-override .cta-img-wrap { background-image: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg') !important; }
+body.img-override .cta-img      { content: url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/5c478666c38252958c145b249e33fd1362117614/Images/image.jpg'); }
 
 /* ── FOOTER ── */
 footer {
