@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&family=Black+Ops+One&display=swap');
 
 :root {
-  --img-hero:       url('images/hero.jpg');
+  --img-hero:       url('https://github.com/SpaceStudiosInc/CHANCEEVITE/blob/3a0ed96bef8073aeb274e0f9443dbaef9e89dc7a/Images/games.webp');
   --img-cta:        url('https://images.unsplash.com/photo-1637594439872-44d1b1fe0a0b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   --img-games:      url('images/games.webp');
   --img-lunch:      url('https://plus.unsplash.com/premium_photo-1723478515704-629ab1575612?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
