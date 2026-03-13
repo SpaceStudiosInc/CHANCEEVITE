@@ -62,7 +62,6 @@
           loading="lazy"
         >
         <div class="cta-img-overlay" aria-hidden="true"></div>
-        <div class="cta-img-grid"    aria-hidden="true"></div>
       </div>
 
       <div class="cta-body">
@@ -120,7 +119,6 @@
 
   <main class="timeline" aria-label="Day Schedule">
 
-    <!-- 1000 -->
     <div class="tl-item">
       <div class="tl-time">1000</div>
       <div class="tl-card">
@@ -133,7 +131,6 @@
       </div>
     </div>
 
-    <!-- 1200 -->
     <div class="tl-item">
       <div class="tl-time">1200</div>
       <div class="tl-card">
@@ -146,7 +143,6 @@
       </div>
     </div>
 
-    <!-- 1600 -->
     <div class="tl-item">
       <div class="tl-time">1600</div>
       <div class="tl-card">
@@ -159,7 +155,6 @@
       </div>
     </div>
 
-    <!-- 1730–1830 HIGHLIGHT -->
     <div class="tl-item">
       <div class="tl-time">1730&ndash;<br>1830</div>
       <div class="tl-card highlight">
@@ -172,7 +167,6 @@
       </div>
     </div>
 
-    <!-- 1900 -->
     <div class="tl-item">
       <div class="tl-time">1900</div>
       <div class="tl-card">
@@ -185,7 +179,6 @@
       </div>
     </div>
 
-    <!-- 2100 -->
     <div class="tl-item">
       <div class="tl-time">2100</div>
       <div class="tl-card">
@@ -200,19 +193,16 @@
 
   </main>
 
-
-  <!-- ══════════════════════════════
-       FOOTER
-  ══════════════════════════════ -->
   <footer>
     Modern Mission &nbsp;&bull;&nbsp; Fayetteville &nbsp;&bull;&nbsp; 20 MAR 2026
   </footer>
 
   <script>
-    // ── NV TOGGLE: pure alpha on/off — images always full color ──
+    const body = document.body;
+
+    // ── RETICLE: blackout ↔ revealed ──
     const nvBtn   = document.getElementById('nv-toggle');
     const nvLabel = document.getElementById('nv-label');
-    const body    = document.body;
     let revealed  = false;
 
     nvBtn.addEventListener('click', () => {
@@ -220,6 +210,20 @@
       body.classList.toggle('nv-revealed', revealed);
       nvLabel.textContent = revealed ? '[ DISENGAGE NV ]' : '[ ENGAGE NV ]';
       nvLabel.style.color = revealed ? 'var(--nv-hot)' : '';
+    });
+
+    // ── TITLE: swap all images to image.jpg ──
+    const imgBtn   = document.getElementById('img-toggle');
+    const imgLabel = document.getElementById('img-label');
+    let imgOverride = false;
+
+    imgBtn.addEventListener('click', () => {
+      imgOverride = !imgOverride;
+      body.classList.toggle('img-override', imgOverride);
+      imgLabel.textContent = imgOverride
+        ? '[ IMAGES OVERRIDDEN — TAP TO RESTORE ]'
+        : '[ TAP TITLE: TOGGLE IMAGES ]';
+      imgLabel.style.color = imgOverride ? 'var(--nv-hot)' : '';
     });
   </script>
 </body>
