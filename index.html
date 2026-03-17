@@ -4,236 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MISSION: CHANCE'S BACHELOR BASH</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020702'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%2376ff03' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%2376ff03'/%3E%3Cline x1='16' y1='3' x2='16' y2='11' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='16' y1='21' x2='16' y2='29' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='3' y1='16' x2='11' y2='16' stroke='%2376ff03' stroke-width='1.5'/%3E%3Cline x1='21' y1='16' x2='29' y2='16' stroke='%2376ff03' stroke-width='1.5'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="mission.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020702'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%2376ff03' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%2376ff03'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="mission2.css">
 </head>
 <body>
 
-  <!-- ══ SCROLL TICKER (visible in blackout, hidden when NV revealed) ══ -->
-  <div class="scroll-ticker" aria-hidden="true">
+  <!-- TICKER: shows in blackout only -->
+  <div class="ticker" aria-hidden="true">
     <span class="ticker-tag">TRANSMISSION</span>
     <div class="ticker-track">
       <span class="ticker-inner">
-        MISSION BRIEFING &nbsp;&#9679;&nbsp; ENGAGE NIGHT VISION TO REVEAL DETAILS &nbsp;&#9679;&nbsp;
-        BACHELOR BASH &nbsp;&#9679;&nbsp; AGENT: CHANCE &nbsp;&#9679;&nbsp; 20 MAR 2026 &nbsp;&#9679;&nbsp;
-        MOUNTAINBURG &nbsp;&rarr;&nbsp; FAYETTEVILLE, AR &nbsp;&#9679;&nbsp; CLEARANCE: REQUIRED &nbsp;&#9679;&nbsp;
-        MODERN MISSION LASER TAG &nbsp;&#9679;&nbsp; DAVE &amp; BUSTER'S &nbsp;&#9679;&nbsp;
-        ENGAGE NV TO REVEAL FULL BRIEFING &nbsp;&#9679;&nbsp;
-        MISSION BRIEFING &nbsp;&#9679;&nbsp; ENGAGE NIGHT VISION TO REVEAL DETAILS &nbsp;&#9679;&nbsp;
-        BACHELOR BASH &nbsp;&#9679;&nbsp; AGENT: CHANCE &nbsp;&#9679;&nbsp; 20 MAR 2026 &nbsp;&#9679;&nbsp;
-        MOUNTAINBURG &nbsp;&rarr;&nbsp; FAYETTEVILLE, AR &nbsp;&#9679;&nbsp; CLEARANCE: REQUIRED &nbsp;&#9679;&nbsp;
-        MODERN MISSION LASER TAG &nbsp;&#9679;&nbsp; DAVE &amp; BUSTER'S &nbsp;&#9679;&nbsp;
-        ENGAGE NV TO REVEAL FULL BRIEFING &nbsp;&#9679;&nbsp;
+        TAP THE SCOPE TO REVEAL THE MISSION &nbsp;&#9679;&nbsp;
+        BACHELOR BASH &nbsp;&#9679;&nbsp; AGENT: CHANCE &nbsp;&#9679;&nbsp; FRI 20 MAR 2026 &nbsp;&#9679;&nbsp;
+        MOUNTAINBURG &rarr; FAYETTEVILLE, AR &nbsp;&#9679;&nbsp;
+        TAP THE SCOPE TO REVEAL THE MISSION &nbsp;&#9679;&nbsp;
+        BACHELOR BASH &nbsp;&#9679;&nbsp; AGENT: CHANCE &nbsp;&#9679;&nbsp; FRI 20 MAR 2026 &nbsp;&#9679;&nbsp;
+        MOUNTAINBURG &rarr; FAYETTEVILLE, AR &nbsp;&#9679;&nbsp;
       </span>
     </div>
   </div>
 
 
-  <!-- ══════════════════════════════
-       HERO
-  ══════════════════════════════ -->
+  <!-- HERO -->
   <header class="hero">
-    <div class="hero-photo-css" aria-hidden="true"></div>
-    <div class="hero-gradient"  aria-hidden="true"></div>
-    <div class="hero-grid"      aria-hidden="true"></div>
-    <div class="scan-bar"       aria-hidden="true"></div>
-
+    <div class="hero-bg"       aria-hidden="true"></div>
+    <div class="hero-gradient" aria-hidden="true"></div>
+    <div class="hero-grid"     aria-hidden="true"></div>
+    <div class="scan-bar"      aria-hidden="true"></div>
     <div class="hero-corner tl" aria-hidden="true"></div>
     <div class="hero-corner tr" aria-hidden="true"></div>
     <div class="hero-corner bl" aria-hidden="true"></div>
     <div class="hero-corner br" aria-hidden="true"></div>
 
     <div class="hero-inner">
-      <div class="hero-status">
-        <span>NV-MODE: <span id="nv-state" style="color:var(--nv-mid)">STANDBY</span></span>
-        <span class="blink">&#9679; REC</span>
-        <span>MOUNTAINBURG, AR</span>
-      </div>
+      <button class="reticle" id="nv-toggle" aria-label="Toggle night vision"></button>
+      <p class="reticle-label" id="nv-label">[ TAP TO ENGAGE ]</p>
 
-      <div class="hero-reticle" id="nv-toggle" title="Toggle night vision" aria-label="Toggle night vision">
-        <div class="reticle-dot"></div>
-      </div>
-      <p class="nv-toggle-label" id="nv-label">[ ENGAGE NV ]</p>
-
-      <h1 class="hero-title" id="img-toggle">CHANCE'S<br>BACHELOR<br>BASH</h1>
-      <p class="img-toggle-label" id="img-label">[ TAP TITLE: TOGGLE IMAGES ]</p>
-
-      <p class="hero-sub">All-Day Event &nbsp;&bull;&nbsp; Mountainburg &rarr; Fayetteville, AR</p>
-      <div class="hero-date">FRIDAY &nbsp;&bull;&nbsp; 20 MAR 2026</div>
+      <h1 class="hero-title">CHANCE'S<br>BACHELOR<br>BASH</h1>
+      <p class="hero-date">Friday, March 20, 2026</p>
+      <p class="hero-route">Mountainburg &rarr; Fayetteville, AR</p>
     </div>
   </header>
 
 
-  <!-- ══════════════════════════════
-       RESERVE CTA
-  ══════════════════════════════ -->
-  <section class="cta-wrap" aria-label="Reservation">
-    <p class="section-eyebrow">&#9654;&nbsp; Reserve Your Spot</p>
-
-    <a
-      href="https://modern.ourers.com/items/indoor_player/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="cta-link"
-      aria-label="Reserve at Modern Mission Laser Tag"
-    >
-      <div class="cta-img-wrap">
-        <div class="cta-img-overlay" aria-hidden="true"></div>
-        <div class="cta-img-content">
-          <p class="cta-venue-label">MAIN EVENT</p>
-          <p class="cta-venue-name">MODERN MISSION<br>LASER TAG</p>
-          <p class="cta-venue-addr">3484 E Joyce Blvd &bull; Fayetteville, AR 72703</p>
-        </div>
+  <!-- RESERVE CTA -->
+  <section class="section cta-section">
+    <div class="section-header">
+      <span class="section-tag">ACTION REQUIRED</span>
+    </div>
+    <a href="https://modern.ourers.com/items/indoor_player/" target="_blank" rel="noopener noreferrer" class="cta-card">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <div class="cta-overlay" aria-hidden="true"></div>
+      <div class="cta-top">
+        <p class="cta-eyebrow">Main Event · 5:30 PM</p>
+        <p class="cta-name">Modern Mission<br>Laser Tag</p>
+        <p class="cta-addr">3484 E Joyce Blvd · Fayetteville, AR</p>
       </div>
-
-      <div class="cta-footer">
-        <span class="cta-cost">$27.00 / person</span>
-        <span class="cta-btn">RESERVE NOW &nbsp;&rsaquo;&rsaquo;</span>
+      <div class="cta-bottom">
+        <span class="cta-price">$27 / person</span>
+        <span class="cta-btn">Reserve Your Spot &rsaquo;&rsaquo;</span>
       </div>
     </a>
   </section>
 
 
-  <!-- ══════════════════════════════
-       START LOCATION
-  ══════════════════════════════ -->
-  <div class="base-wrap">
-    <p class="section-eyebrow">&#9654;&nbsp; Start Location</p>
-    <div class="panel">
-      <div class="panel-body">
-        <strong>Meet Up &mdash; Mountainburg, AR</strong>
-        <span class="dim">17221 N Highway 71, Mountainburg AR 72946</span>
-      </div>
-      <a
-        href="https://maps.app.goo.gl/sWYU5wshiM7epcPN8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="maps-btn"
-        aria-label="Open in Google Maps"
-      >&#9654; Open in Google Maps</a>
+  <!-- START LOCATION -->
+  <section class="section meetup-section">
+    <div class="section-header">
+      <span class="section-tag">START LOCATION</span>
     </div>
-  </div>
+    <div class="info-card">
+      <div class="info-main">
+        <p class="info-title">Mountainburg, AR</p>
+        <p class="info-sub">17221 N Highway 71 · Arrive from 10:00 AM</p>
+      </div>
+      <a href="https://maps.app.goo.gl/sWYU5wshiM7epcPN8" target="_blank" rel="noopener noreferrer" class="maps-btn">
+        &#9654; Google Maps
+      </a>
+    </div>
+  </section>
 
 
-  <!-- ══════════════════════════════
-       TIMELINE
-  ══════════════════════════════ -->
-  <div class="divider">
-    <div class="div-line"></div>
-    <span class="div-label">SCHEDULE</span>
-    <div class="div-line r"></div>
-  </div>
+  <!-- SCHEDULE -->
+  <section class="section schedule-section">
+    <div class="section-header">
+      <span class="section-tag">SCHEDULE</span>
+    </div>
 
-  <main class="timeline" aria-label="Day Schedule">
+    <div class="schedule">
 
-    <div class="tl-item">
-      <div class="tl-time">1000</div>
-      <div class="tl-card">
-        <div class="tl-strip-css strip-games" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Soft Start</p>
-          <p class="tl-title">Meet Up &mdash; Mountainburg</p>
-          <p class="tl-desc">17221 N Highway 71. Get there whenever &mdash; real ones know this spot.</p>
+      <div class="ev">
+        <div class="ev-time">10:00 AM</div>
+        <div class="ev-spine"><div class="ev-dot"></div><div class="ev-line"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-games)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Meet Up</p>
+            <p class="ev-sub">Mountainburg · 17221 N Hwy 71</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tl-item">
-      <div class="tl-time">1200</div>
-      <div class="tl-card highlight">
-        <div class="tl-strip-css strip-lunch" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Midday Stop</p>
-          <p class="tl-title">Dave &amp; Buster's</p>
-          <p class="tl-desc">Games, food, good times. Don't be late &mdash; we're rolling as a group.</p>
+      <div class="ev">
+        <div class="ev-time">12:00 PM</div>
+        <div class="ev-spine"><div class="ev-dot"></div><div class="ev-line"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-lunch)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Dave &amp; Buster's</p>
+            <p class="ev-sub">Games &amp; food — rolling as a group, don't be late</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tl-item">
-      <div class="tl-time">1600</div>
-      <div class="tl-card">
-        <div class="tl-strip-css strip-drive-out" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Transit</p>
-          <p class="tl-title">Drive to Fayetteville</p>
-          <p class="tl-desc">Head out as a convoy. Don't be late.</p>
+      <div class="ev">
+        <div class="ev-time">4:00 PM</div>
+        <div class="ev-spine"><div class="ev-dot"></div><div class="ev-line"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-drive-out)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Drive to Fayetteville</p>
+            <p class="ev-sub">Convoy out together</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tl-item">
-      <div class="tl-time">1730</div>
-      <div class="tl-card highlight primary">
-        <div class="tl-strip-css strip-lasertag" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Main Event &mdash; 1730&ndash;1830</p>
-          <p class="tl-title">Modern Mission Laser Tag</p>
-          <p class="tl-desc">3484 E Joyce Blvd, Fayetteville, AR. Reserve your spot above &mdash; $27 per person.</p>
+      <div class="ev ev--main">
+        <div class="ev-time">5:30 PM</div>
+        <div class="ev-spine"><div class="ev-dot"></div><div class="ev-line"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-lasertag)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Laser Tag</p>
+            <p class="ev-sub">Modern Mission · 3484 E Joyce Blvd · <strong>Reserve above — $27</strong></p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tl-item">
-      <div class="tl-time">1900</div>
-      <div class="tl-card">
-        <div class="tl-strip-css strip-dinner" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Evening</p>
-          <p class="tl-title">Dinner</p>
-          <p class="tl-desc">Somewhere in Fayetteville. Location TBD by the group.</p>
+      <div class="ev">
+        <div class="ev-time">7:00 PM</div>
+        <div class="ev-spine"><div class="ev-dot"></div><div class="ev-line"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-dinner)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Dinner</p>
+            <p class="ev-sub">Fayetteville · location TBD</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="tl-item">
-      <div class="tl-time">2100</div>
-      <div class="tl-card">
-        <div class="tl-strip-css strip-drive-home" aria-hidden="true"></div>
-        <div class="tl-inner">
-          <p class="tl-phase">Wrap</p>
-          <p class="tl-title">Drive Home</p>
-          <p class="tl-desc">Head back. No hard end time.</p>
+      <div class="ev ev--last">
+        <div class="ev-time">9:00 PM</div>
+        <div class="ev-spine"><div class="ev-dot"></div></div>
+        <div class="ev-card">
+          <div class="ev-img" style="background-image:var(--img-drive-home)" aria-hidden="true"></div>
+          <div class="ev-body">
+            <p class="ev-name">Head Home</p>
+            <p class="ev-sub">No hard end time</p>
+          </div>
         </div>
       </div>
+
     </div>
+  </section>
 
-  </main>
 
-  <footer>
-    Modern Mission &nbsp;&bull;&nbsp; Fayetteville, AR &nbsp;&bull;&nbsp; 20 MAR 2026
-  </footer>
+  <footer>Modern Mission &nbsp;&bull;&nbsp; Fayetteville, AR &nbsp;&bull;&nbsp; 20 MAR 2026</footer>
 
   <script>
-    const body = document.body;
+    const body   = document.body;
+    const btn    = document.getElementById('nv-toggle');
+    const label  = document.getElementById('nv-label');
+    let revealed = false;
 
-    // ── NV TOGGLE ──
-    const nvBtn    = document.getElementById('nv-toggle');
-    const nvLabel  = document.getElementById('nv-label');
-    const nvState  = document.getElementById('nv-state');
-    let revealed   = false;
-
-    nvBtn.addEventListener('click', () => {
+    btn.addEventListener('click', () => {
       revealed = !revealed;
       body.classList.toggle('nv-revealed', revealed);
-      nvLabel.textContent = revealed ? '[ DISENGAGE NV ]' : '[ ENGAGE NV ]';
-      nvLabel.style.color = revealed ? 'var(--nv-hot)' : '';
-      nvState.textContent = revealed ? 'ON' : 'STANDBY';
-      nvState.style.color = revealed ? 'var(--nv-hot)' : 'var(--nv-mid)';
-    });
-
-    // ── IMAGE OVERRIDE TOGGLE ──
-    const imgBtn   = document.getElementById('img-toggle');
-    const imgLabel = document.getElementById('img-label');
-    let imgOverride = false;
-
-    imgBtn.addEventListener('click', () => {
-      imgOverride = !imgOverride;
-      body.classList.toggle('img-override', imgOverride);
-      imgLabel.textContent = imgOverride
-        ? '[ IMAGES OVERRIDDEN — TAP TO RESTORE ]'
-        : '[ TAP TITLE: TOGGLE IMAGES ]';
-      imgLabel.style.color = imgOverride ? 'var(--nv-hot)' : '';
+      label.textContent = revealed ? '[ TAP TO DISENGAGE ]' : '[ TAP TO ENGAGE ]';
+      label.style.color = revealed ? 'var(--nv-hot)' : '';
     });
   </script>
 </body>
