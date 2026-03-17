@@ -330,7 +330,7 @@ body.nv-revealed footer        { opacity: 1; }
    ══════════════════════════════════ */
 .cta-card {
   display: block;
-  position: relative; /* needed for absolutely positioned children */
+  position: relative;
   text-decoration: none;
   border: 2px solid var(--hot);
   overflow: hidden;
@@ -533,17 +533,15 @@ body.nv-revealed footer        { opacity: 1; }
   box-shadow: var(--glow-sm);
 }
 
+/* ── Photos: full color, no night-vision filter ── */
 .ev-img {
   height: 90px;
   background-size: cover;
   background-position: center;
-  filter: saturate(0.4) sepia(0.6) hue-rotate(70deg) brightness(0.75);
-  transition: filter 0.3s;
+  transition: brightness 0.3s;
 }
-.ev-card:hover .ev-img,
-.ev--main .ev-card .ev-img {
-  filter: saturate(0.5) sepia(0.5) hue-rotate(70deg) brightness(0.85);
-}
+.ev-card:hover .ev-img { filter: brightness(1.05); }
+.ev--main .ev-card .ev-img { filter: brightness(1.0); }
 
 .ev-body {
   padding: 0.7rem 1rem 0.85rem;
