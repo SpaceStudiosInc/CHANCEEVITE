@@ -43,7 +43,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   cursor: crosshair;
-  padding-bottom: 34px; /* ticker height */
+  padding-bottom: 34px;
 }
 
 /* CRT scanlines — subtle */
@@ -94,10 +94,6 @@ body::after {
 @keyframes slide-up {
   from{ transform:translateY(10px); opacity:0; }
   to  { transform:translateY(0);    opacity:1; }
-}
-@keyframes reticle-spin {
-  from{ transform: rotate(0deg); }
-  to  { transform: rotate(360deg); }
 }
 
 
@@ -279,7 +275,6 @@ body.nv-revealed footer        { opacity: 1; }
   margin-bottom: 1rem;
 }
 
-/* Plain English — clear, no jargon */
 .hero-date {
   font-family: var(--display);
   font-size: 1.25rem;
@@ -335,6 +330,7 @@ body.nv-revealed footer        { opacity: 1; }
    ══════════════════════════════════ */
 .cta-card {
   display: block;
+  position: relative; /* needed for absolutely positioned children */
   text-decoration: none;
   border: 2px solid var(--hot);
   overflow: hidden;
@@ -354,7 +350,6 @@ body.nv-revealed footer        { opacity: 1; }
   background: linear-gradient(to top, rgba(2,7,2,0.96) 30%, rgba(2,7,2,0.55) 100%);
 }
 
-/* Top — venue info over image */
 .cta-top {
   position: relative;
   min-height: 160px;
@@ -386,7 +381,6 @@ body.nv-revealed footer        { opacity: 1; }
   letter-spacing: 0.04em;
 }
 
-/* Bottom bar */
 .cta-bottom {
   position: relative;
   background: var(--panel);
@@ -467,7 +461,6 @@ body.nv-revealed footer        { opacity: 1; }
 
 /* ══════════════════════════════════
    SCHEDULE — vertical timeline
-   Key: TIME is huge, name is big, one-liner detail
    ══════════════════════════════════ */
 .schedule {
   padding-top: 0.2rem;
@@ -487,7 +480,6 @@ body.nv-revealed footer        { opacity: 1; }
 .ev:nth-child(5){animation-delay:.22s}
 .ev:nth-child(6){animation-delay:.26s}
 
-/* Time column */
 .ev-time {
   font-family: var(--display);
   font-size: 0.95rem;
@@ -500,7 +492,6 @@ body.nv-revealed footer        { opacity: 1; }
   white-space: nowrap;
 }
 
-/* Spine column — dot + vertical line */
 .ev-spine {
   display: flex;
   flex-direction: column;
@@ -527,7 +518,6 @@ body.nv-revealed footer        { opacity: 1; }
   margin-top: 4px;
 }
 
-/* Card column */
 .ev-card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -547,7 +537,6 @@ body.nv-revealed footer        { opacity: 1; }
   height: 90px;
   background-size: cover;
   background-position: center;
-  /* Slight green tint — NV feel */
   filter: saturate(0.4) sepia(0.6) hue-rotate(70deg) brightness(0.75);
   transition: filter 0.3s;
 }
@@ -560,7 +549,6 @@ body.nv-revealed footer        { opacity: 1; }
   padding: 0.7rem 1rem 0.85rem;
 }
 
-/* Event name — big, clear, readable */
 .ev-name {
   font-family: var(--display);
   font-size: 1.25rem;
@@ -575,7 +563,6 @@ body.nv-revealed footer        { opacity: 1; }
   text-shadow: var(--glow-sm);
 }
 
-/* One-line detail — plain English */
 .ev-sub {
   font-family: var(--mono);
   font-size: 0.7rem;
